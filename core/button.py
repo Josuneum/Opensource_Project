@@ -1,11 +1,14 @@
 import pygame
 
 class Button:
-    def __init__(self, x, y, width, height, text, callback):
+    def __init__(self, x, y, width, height, text, text_size, callback):
+        self.width = width
+        self.height = height
         self.rect = pygame.Rect(x, y, width, height)
         self.text = text
+        self.text_size = text_size
         self.callback = callback
-        self.font = pygame.font.SysFont(None, 40)
+        self.font = pygame.font.SysFont(None, text_size)
         self.color = (200, 200, 200)
         self.hover_color = (255, 255, 255)
 
@@ -17,7 +20,8 @@ class Button:
             pygame.draw.rect(screen, self.color, self.rect)
 
         text_surface = self.font.render(self.text, True, (0, 0, 0))
-        screen.blit(text_surface, (self.rect.x + 10, self.rect.y + 10))
+        text_rect = text_surface.get_rect(center=self.rect.center)
+        screen.blit(text_surface, text_rect)
 
     def handle_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
