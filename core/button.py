@@ -1,6 +1,7 @@
 import pygame
 
 class Button:
+    #버튼의 위치 x , y 버튼의 가로(width) 세로(height) ,버튼에 표시될 문자(text)와 크기, 버튼을 누르면 적용될 함수
     def __init__(self, x, y, width, height, text, text_size, callback):
         self.width = width
         self.height = height

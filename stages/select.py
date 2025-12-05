@@ -12,8 +12,8 @@ class StageSelectScreen:
         ]
 
     def start_stage1(self):
-        from .stage1 import Stage1
-        self.engine.change_scene(Stage1(self.engine))
+        from .stage1_difficulty import Stage1DifficultyScreen
+        self.engine.change_scene(Stage1DifficultyScreen(self.engine))
 
     def start_stage2(self):
         from .stage2 import Stage2
