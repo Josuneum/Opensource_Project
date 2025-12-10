@@ -115,9 +115,6 @@ class Stage1:
         # player_path에는 start, end가 없고 중간 노드만 있으므로:
         player_nodes = [self.start] + self.player_path + [self.end]
 
-        print("DEBUG player:", player_nodes)
-        print("DEBUG best  :", self.best_path)
-
         if player_nodes == self.best_path:
             self.success = True
         else:
@@ -130,7 +127,7 @@ class Stage1:
 
     def node_to_buttons(self):
         for node_id, pos in self.nodes:
-            label = "S" if node_id == self.start else "E" if node_id == self.end else str(node_id)
+            label = "S" if node_id == self.start else "E" if node_id == self.end else str("")
             btn = Button(pos[0], pos[1], 40, 40, label, 20, None)
             setattr(btn, "node_id", node_id)
             btn.callback = lambda b=btn: self.node_clicked(b)
