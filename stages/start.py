@@ -5,7 +5,7 @@ class StartScreen:
     def __init__(self, engine):
         self.engine = engine
         self.start_button = Button(300, 380, 200, 60, "Start", 40, self.start_game)
-        self.end_button = Button(300, 460, 200, 60, "Good bye", 40, self.end_game)
+        self.end_button = Button(300, 460, 200, 60, "End", 40, self.end_game)
 
     def start_game(self):
         from .select import StageSelectScreen

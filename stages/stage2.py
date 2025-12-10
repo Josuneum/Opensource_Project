@@ -2,12 +2,12 @@ import pygame
 from math import *
 import random
 from core.button import Button
+from core.config import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class Stage2:
     def __init__(self, engine):
         self.engine = engine
 
-        # 버튼 UI 위치 변경: Back + Check를 왼쪽 세로 배치
         self.buttons = [
             Button(15, 15, 60, 40, "Back", 18, self.back_to_start),
             Button(15, 70, 60, 40, "Check", 18, self.check_answer)
@@ -23,13 +23,13 @@ class Stage2:
             ("x^2",    lambda x: x*x),
             ("x^3",    lambda x: x*x*x),
             ("exp(x)/5", lambda x: exp(x)/5),
-            ("ln(x+6)", lambda x: log(x+6)),  # x > -6에서 정의됨
+            ("ln(x+6)", lambda x: log(x+6)),
             ("abs(x)", lambda x: abs(x)),
             ]
         self.function_name, self.current_function = random.choice(self.problems)
 
         # 정답 그래프 렌더러
-        self.graph = GraphRenderer(width=600, height=600, size=20, rate=1000,
+        self.graph = GraphRenderer(width=SCREEN_HEIGHT, height=SCREEN_HEIGHT, size=20, rate=1000,
                            func=self.current_function)
 
         # 플레이어 그래프 (여러 선을 저장)
@@ -241,6 +241,7 @@ class GraphRenderer:
             pygame.draw.circle(overlay, (255, 0, 0, 140), (sx, sy), 3)
 
         screen.blit(overlay, (ox, oy))
+
     def draw_axes(self, screen, ox, oy):
 
         grid_step_x = self.WIDTH // 10

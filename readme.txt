@@ -11,10 +11,30 @@ stage1:
 
 stage2:
     repository: https://github.com/las-r/graphing-calc-pygame?tab=readme-ov-file
-    License: MIT License
+    License: MIT license
     Copyright (c) las-r
 
 stage3:
     repository: https://github.com/marcpaulo15/game_of_life?tab=readme-ov-file
-    License: MIT License
+    License: MIT license
     Copyright (c) marcpaulo15
+
+stage4:
+    (1)
+    Library: RapidFuzz
+    repository: https://github.com/rapidfuzz/RapidFuzz?tab=readme-ov-file
+    License: MIT license
+    Copyright © 2020-present Max Bachmann
+    Copyright © 2011 Adam Cohen
+
+    (2)
+    Library: TinyDB
+    repository: https://github.com/msiemens/tinydb
+    License: MIT license
+    Copyright (C) 2013 Markus Siemens <markus@m-siemens.de>
+
+stage5:
+    Library: Liborsa
+    repository: https://github.com/librosa/librosa
+    License: ISC license
+    Copyright (c) 2013--2023, librosa development team
